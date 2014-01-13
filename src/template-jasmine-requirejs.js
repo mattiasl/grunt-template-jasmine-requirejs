@@ -107,7 +107,7 @@ exports.process = function(grunt, task, context) {
    * Retrieves the module URL for a require call relative to the specified Base URL.
    */
   function getRelativeModuleUrl(src) {
-    return path.relative(baseUrl, src).replace(/\.js$/, '');
+    return path.relative(baseUrl, src).replace(/\.js$/, '').replace(/\\/g, '/');
   }
 
   // Remove baseUrl and .js from src files
